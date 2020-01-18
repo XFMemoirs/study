@@ -2,6 +2,7 @@
 #define _SINGLETON_BASE_H_
 
 // 单例基类
+// 继承此类即成为单例
 template <typename sgt_class>
 class SingletonBase
 {

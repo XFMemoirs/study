@@ -5,7 +5,7 @@
 #define INIT_CACHE_LEN 16 // 初始化默认缓存长度
 #define DILATATION_LEN 8 // 扩容长度
 
-// 链表
+// 双向缓冲链表
 template <typename T>
 class Linklist
 {
