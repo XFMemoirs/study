@@ -28,4 +28,14 @@ export class Deque extends LinkList<any>{
     popRear(){
         this.pop(true);
     }
+
+    // 获取队头
+    getFront(){
+        return this.get(0);
+    }
+    
+    // 获取队尾
+    getRear(){
+        return this.get(this.length - 1);
+    }
 }
