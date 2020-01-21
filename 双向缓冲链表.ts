@@ -10,12 +10,12 @@ const INIT_CACHE_LEN = 20;
 
 // 双向缓冲链表
 export class LinkList<T>{
-    private useLen: number = 0;
-    private cacheLen: number = 0;
-    private useHead: LNode<T> = new LNode<T>();
-    private cacheHead: LNode<T> = new LNode<T>();
-    private iter: LNode<T>;
-    private addCacheLen = INIT_CACHE_LEN;
+    protected useLen: number = 0; // 使用长度
+    protected cacheLen: number = 0; // 缓存长度
+    protected useHead: LNode<T> = new LNode<T>(); // 使用头
+    protected cacheHead: LNode<T> = new LNode<T>(); // 缓存头
+    protected iter: LNode<T>; // 迭代器
+    protected addCacheLen = INIT_CACHE_LEN; // 扩容长度
 
     constructor(cache_len: number = INIT_CACHE_LEN){
         let head = this.useHead;
@@ -31,6 +31,7 @@ export class LinkList<T>{
         this.iter = this.useHead.next;
     }
 
+    // 推入
     push(data: T){
         let head = this.useHead;
         let node = this.getCacheNode();
@@ -175,7 +176,7 @@ export class LinkList<T>{
     }
 
     // 获取使用节点
-    private getNode(index: number): LNode<T>{
+    protected getNode(index: number): LNode<T>{
         if (index < 0 || index >= this.useLen){
             return null;
         }
@@ -199,7 +200,7 @@ export class LinkList<T>{
     }
 
     // 获取缓存节点
-    private getCacheNode(): LNode<T>{
+    protected getCacheNode(): LNode<T>{
         if (this.cacheLen <= 0){
             this.dilatation();
         }
@@ -214,7 +215,7 @@ export class LinkList<T>{
     }
 
     // 扩容
-    private dilatation(len: number = this.addCacheLen){
+    protected dilatation(len: number = this.addCacheLen){
         let head = this.cacheHead;
         for (let i = 0; i < len; ++i){
             let cache = new LNode<T>();
