@@ -1,4 +1,4 @@
-import { LinkList } from "./双向缓冲链表";
+import { LinkList } from "../线性表/双向缓冲链表";
 
 // 双端队列
 // 参考: https://www.jianshu.com/p/1f1520db325d

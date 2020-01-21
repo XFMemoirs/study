@@ -1,4 +1,4 @@
-import { LinkList } from "./双向缓冲链表";
+import { LinkList } from "../线性表/双向缓冲链表";
 
 // 栈
 // 先进后出
