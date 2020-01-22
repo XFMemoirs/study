@@ -19,6 +19,7 @@ export class RingQueue{
         }
         this.rear = next;
         this.data[next] = data;
+        this.useLength++;
     }
 
     // 出队列
